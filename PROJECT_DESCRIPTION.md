@@ -6,8 +6,8 @@ A complete Infrastructure as Code solution for deploying a production-ready Mine
 
 ```bash
 # Clone the repository
-git clone https://github.com/VishalBharadwaj/minecraft-terraform-aws.git
-cd minecraft-terraform-aws
+git clone https://github.com/VishalBharadwaj/Minecraft-Server-Terraform-AWS.git
+cd Minecraft-Server-Terraform-AWS
 
 # Configure your settings
 cp terraform.tfvars.example terraform.tfvars
