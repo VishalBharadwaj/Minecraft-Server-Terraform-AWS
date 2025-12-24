@@ -1,7 +1,7 @@
 # Copy this file to terraform.tfvars and customize your values
 
 # Basic Configuration
-aws_region = "us-east-1"
+aws_region = "ap-south-1"          # Asia Pacific (Mumbai) - Great for Indian players!
 instance_type = "m7i-flex.large"   # FREE TIER ELIGIBLE! 2 vCPUs, 8GB RAM - Perfect for friends server!
 volume_size = 30                   # Max free tier storage
 environment = "prod"

@@ -101,6 +101,23 @@ resource "aws_security_group" "minecraft_sg" {
     description = "Minecraft server port"
   }
 
+  # Alternative Minecraft ports for firewall bypass
+  ingress {
+    from_port   = 80
+    to_port     = 80
+    protocol    = "tcp"
+    cidr_blocks = var.minecraft_allowed_cidr
+    description = "Minecraft alternative port (HTTP)"
+  }
+
+  ingress {
+    from_port   = 443
+    to_port     = 443
+    protocol    = "tcp"
+    cidr_blocks = var.minecraft_allowed_cidr
+    description = "Minecraft alternative port (HTTPS)"
+  }
+
   # HTTPS for updates and downloads
   egress {
     from_port   = 443

@@ -10,6 +10,7 @@ A complete Infrastructure as Code solution for deploying a production-ready Mine
 - **10-20 players** supported (vs 2-5 players)
 - **Full mod/plugin support**
 - **Still FREE** for 12 months!
+- **Optimized for Indian/South Asian players** with Mumbai region! 🇮🇳
 
 ## 🚀 Quick Start
 

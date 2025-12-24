@@ -4,12 +4,13 @@ This project deploys a production-ready Minecraft Java Edition server on AWS usi
 
 ## 🚀 **AMAZING UPDATE: m7i-flex.large is FREE TIER ELIGIBLE!**
 
-**What this means for your Minecraft server:**
+**What this means for your Minecraft server in Asia Pacific (Mumbai):**
 - **8GB RAM** instead of 1GB (8x more memory!)
 - **2 vCPUs** instead of 1 (2x processing power!)
 - **10-20 players** supported instead of 2-5
 - **Full plugin/mod support** 
 - **Still completely FREE** for 12 months!
+- **Low latency** for Indian and South Asian players! 🇮🇳
 
 ## Production Features
 
