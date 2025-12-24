@@ -141,17 +141,17 @@ if [ "$TOTAL_MEM" -gt 7000 ]; then
     # m7i-flex.large or larger (8GB+ RAM)
     XMS="2G"
     XMX="6G"
-    echo "Detected large instance (${TOTAL_MEM}MB RAM) - Using 6GB heap"
+    echo "Detected large instance ($TOTAL_MEM MB RAM) - Using 6GB heap"
 elif [ "$TOTAL_MEM" -gt 3000 ]; then
     # t3.medium or similar (4GB RAM)
     XMS="1G"
     XMX="3G"
-    echo "Detected medium instance (${TOTAL_MEM}MB RAM) - Using 3GB heap"
+    echo "Detected medium instance ($TOTAL_MEM MB RAM) - Using 3GB heap"
 else
     # t3.micro or t2.micro (1GB RAM)
     XMS="512M"
     XMX="896M"
-    echo "Detected small instance (${TOTAL_MEM}MB RAM) - Using 896MB heap"
+    echo "Detected small instance ($TOTAL_MEM MB RAM) - Using 896MB heap"
 fi
 
 # Optimized JVM flags for Minecraft
