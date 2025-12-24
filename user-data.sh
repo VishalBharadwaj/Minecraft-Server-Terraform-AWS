@@ -128,15 +128,36 @@ EOF
 # Accept EULA
 echo "eula=true" > eula.txt
 
-# Create JVM optimization script for t3.micro
+# Create JVM optimization script with dynamic memory allocation
 cat > /opt/minecraft/scripts/start-server.sh << 'EOF'
 #!/bin/bash
 cd /opt/minecraft/server
 
-# Optimized JVM flags for t3.micro (1GB RAM)
+# Get total system memory
+TOTAL_MEM=$(free -m | awk 'NR==2{printf "%.0f", $2}')
+
+# Calculate optimal JVM memory allocation based on instance size
+if [ "$TOTAL_MEM" -gt 7000 ]; then
+    # m7i-flex.large or larger (8GB+ RAM)
+    XMS="2G"
+    XMX="6G"
+    echo "Detected large instance (${TOTAL_MEM}MB RAM) - Using 6GB heap"
+elif [ "$TOTAL_MEM" -gt 3000 ]; then
+    # t3.medium or similar (4GB RAM)
+    XMS="1G"
+    XMX="3G"
+    echo "Detected medium instance (${TOTAL_MEM}MB RAM) - Using 3GB heap"
+else
+    # t3.micro or t2.micro (1GB RAM)
+    XMS="512M"
+    XMX="896M"
+    echo "Detected small instance (${TOTAL_MEM}MB RAM) - Using 896MB heap"
+fi
+
+# Optimized JVM flags for Minecraft
 exec java \
-    -Xms512M \
-    -Xmx896M \
+    -Xms$XMS \
+    -Xmx$XMX \
     -XX:+UseG1GC \
     -XX:+ParallelRefProcEnabled \
     -XX:MaxGCPauseMillis=200 \
@@ -164,6 +185,16 @@ chmod +x /opt/minecraft/scripts/start-server.sh
 
 # Set ownership
 chown -R minecraft:minecraft /opt/minecraft
+
+# Resource limits based on instance size
+TOTAL_MEM=$(free -m | awk 'NR==2{printf "%.0f", $2}')
+if [ "$TOTAL_MEM" -gt 7000 ]; then
+    MEMORY_MAX="7G"
+    NOFILE_LIMIT="8192"
+else
+    MEMORY_MAX="950M"
+    NOFILE_LIMIT="4096"
+fi
 
 # Create systemd service with proper configuration
 cat > /etc/systemd/system/minecraft.service << EOF
@@ -197,8 +228,8 @@ ProtectKernelModules=true
 ProtectControlGroups=true
 
 # Resource limits
-LimitNOFILE=4096
-MemoryMax=950M
+LimitNOFILE=$NOFILE_LIMIT
+MemoryMax=$MEMORY_MAX
 
 [Install]
 WantedBy=multi-user.target

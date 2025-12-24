@@ -2,8 +2,8 @@
 
 # Basic Configuration
 aws_region = "us-east-1"
-instance_type = "t3.micro"  # Use t2.micro or t3.micro for free tier
-volume_size = 20            # Max 30GB for free tier
+instance_type = "m7i-flex.large"   # FREE TIER ELIGIBLE! 2 vCPUs, 8GB RAM - Perfect for friends server!
+volume_size = 30                   # Max free tier storage
 environment = "prod"
 
 # SSH Configuration

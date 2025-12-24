@@ -1,6 +1,15 @@
 # Production Minecraft Server on AWS with Terraform
 
-This project deploys a production-ready Minecraft Java Edition server on AWS using Terraform, optimized for the AWS Free Tier with enterprise-grade features.
+This project deploys a production-ready Minecraft Java Edition server on AWS using Terraform, now optimized for the **m7i-flex.large** instance (FREE TIER ELIGIBLE!) with enterprise-grade features.
+
+## 🚀 **AMAZING UPDATE: m7i-flex.large is FREE TIER ELIGIBLE!**
+
+**What this means for your Minecraft server:**
+- **8GB RAM** instead of 1GB (8x more memory!)
+- **2 vCPUs** instead of 1 (2x processing power!)
+- **10-20 players** supported instead of 2-5
+- **Full plugin/mod support** 
+- **Still completely FREE** for 12 months!
 
 ## Production Features
 
@@ -28,8 +37,8 @@ Your AWS user/role needs these permissions:
 
 ## Free Tier Resources Used
 
-- EC2 t3.micro instance (750 hours/month free)
-- 20GB GP3 EBS storage (30GB free tier limit)
+- **EC2 m7i-flex.large instance** (750 hours/month free) - **2 vCPUs, 8GB RAM!** 🚀
+- 30GB GP3 EBS storage (30GB free tier limit)
 - S3 storage for backups (5GB free)
 - CloudWatch logs and metrics (basic tier)
 - VPC, Security Groups, and networking (free)

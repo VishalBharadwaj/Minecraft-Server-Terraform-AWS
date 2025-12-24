@@ -5,15 +5,31 @@ variable "aws_region" {
 }
 
 variable "instance_type" {
-  description = "EC2 instance type (use t2.micro or t3.micro for free tier)"
+  description = "EC2 instance type (m7i-flex.large is free tier eligible with excellent performance!)"
   type        = string
-  default     = "t3.micro"
+  default     = "m7i-flex.large"
+  
+  validation {
+    condition = contains([
+      "t2.micro", "t3.micro",           # Traditional free tier
+      "m7i-flex.large", "m7i-flex.xlarge", # New free tier eligible (better performance!)
+      "t3.small", "t3.medium",          # Burstable performance
+      "m6i.large", "m6i.xlarge",        # Previous generation
+      "c6i.large", "c6i.xlarge"         # Compute optimized
+    ], var.instance_type)
+    error_message = "Instance type must be a supported EC2 instance type."
+  }
 }
 
 variable "volume_size" {
-  description = "Root volume size in GB (free tier allows up to 30GB)"
+  description = "Root volume size in GB (free tier allows up to 30GB, can increase for better performance)"
   type        = number
-  default     = 20
+  default     = 30
+  
+  validation {
+    condition     = var.volume_size >= 20 && var.volume_size <= 100
+    error_message = "Volume size must be between 20 and 100 GB."
+  }
 }
 
 variable "public_key_path" {

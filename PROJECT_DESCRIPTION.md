@@ -1,6 +1,15 @@
 # 🎮 Production Minecraft Server on AWS with Terraform
 
-A complete Infrastructure as Code solution for deploying a production-ready Minecraft Java Edition server on AWS, optimized for the AWS Free Tier with enterprise-grade features.
+A complete Infrastructure as Code solution for deploying a production-ready Minecraft Java Edition server on AWS, now optimized for the **m7i-flex.large** instance (FREE TIER ELIGIBLE!) with enterprise-grade features.
+
+## 🚀 **GAME CHANGER: m7i-flex.large FREE TIER!**
+
+**Incredible upgrade at NO COST:**
+- **8GB RAM** (vs 1GB on t3.micro) - 8x more memory!
+- **2 vCPUs** (vs 1 vCPU) - 2x processing power!
+- **10-20 players** supported (vs 2-5 players)
+- **Full mod/plugin support**
+- **Still FREE** for 12 months!
 
 ## 🚀 Quick Start
 
@@ -22,10 +31,10 @@ terraform apply
 ## ✨ Features
 
 ### 🏗️ Infrastructure
-- **EC2 t3.micro** instance (AWS Free Tier eligible)
+- **EC2 m7i-flex.large** instance (FREE TIER! 2 vCPUs, 8GB RAM)
 - **Custom VPC** with public subnet and security groups
 - **Elastic IP** for consistent server address
-- **Encrypted EBS storage** (20GB, expandable to 30GB free tier limit)
+- **Encrypted EBS storage** (30GB free tier limit)
 
 ### 🔒 Security
 - **Restricted SSH access** (configurable IP whitelist)
