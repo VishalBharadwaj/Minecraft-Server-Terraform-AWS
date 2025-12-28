@@ -6,6 +6,8 @@ This project deploys a production-ready Minecraft Java Edition server on AWS usi
 <img width="1844" height="871" alt="image" src="https://github.com/user-attachments/assets/20a2bce4-4926-4449-ab25-bf6ce528dc33" />
 <img width="1843" height="866" alt="image" src="https://github.com/user-attachments/assets/46446bb8-6115-45fc-9840-315b4efb820c" />
 <img width="1845" height="820" alt="image" src="https://github.com/user-attachments/assets/26312490-986f-474e-9b78-4a0d69aad964" />
+<img width="1846" height="846" alt="image" src="https://github.com/user-attachments/assets/5d05d160-4af9-46fe-95fc-0cbe09a064ae" />
+
 
 
 ## **UPDATE: m7i-flex.large is FREE TIER ELIGIBLE!**
