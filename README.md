@@ -2,7 +2,13 @@
 
 This project deploys a production-ready Minecraft Java Edition server on AWS using Terraform, now optimized for the **m7i-flex.large** instance (FREE TIER ELIGIBLE!) with enterprise-grade features.
 
-## **AMAZING UPDATE: m7i-flex.large is FREE TIER ELIGIBLE!**
+<img width="1835" height="823" alt="image" src="https://github.com/user-attachments/assets/7c2bff42-a97e-4932-9c2b-d6d3aa9a6063" />
+<img width="1844" height="871" alt="image" src="https://github.com/user-attachments/assets/20a2bce4-4926-4449-ab25-bf6ce528dc33" />
+<img width="1843" height="866" alt="image" src="https://github.com/user-attachments/assets/46446bb8-6115-45fc-9840-315b4efb820c" />
+<img width="1845" height="820" alt="image" src="https://github.com/user-attachments/assets/26312490-986f-474e-9b78-4a0d69aad964" />
+
+
+## **UPDATE: m7i-flex.large is FREE TIER ELIGIBLE!**
 
 **What this means for your Minecraft server in Asia Pacific (Mumbai):**
 - **8GB RAM** instead of 1GB (8x more memory!)
